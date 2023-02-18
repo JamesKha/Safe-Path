@@ -1,4 +1,5 @@
 streamlit
-streamlit-searchbox
 streamlit-folium
 requests
+geopandas
+matplotlib
