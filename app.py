@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_folium import st_folium
+from streamlit_folium import folium_static
 import folium
 import requests
 import json
@@ -50,10 +51,7 @@ def getReadableInstructions(steps):
 def parseWaypointsInRoute(waypoints):
     coordinatesList = []
     for waypoint in waypoints:
-        cuCoordinate = coordinate(0, 0)
-        # openrouteservice has their coordinates lon,lat while openstreetmap has their coordinates lat,lon
-        cuCoordinate.lat, cuCoordinate.lon = waypoint[1], waypoint[0]
-        coordinatesList.append(cuCoordinate)
+        coordinatesList.append((waypoint[1], waypoint[0]))
     return coordinatesList
 
 
@@ -137,7 +135,7 @@ def getDirectionsJSON(urlRequest, start_lat, start_lon, end_lat, end_lon):
     response = requests.post(
         "https://api.openrouteservice.org/v2/directions/driving-car/geojson", headers=headers, json=data)
     jsonRes = response.json()
-    #print(jsonRes)
+    # print(jsonRes)
     steps = jsonRes["features"][0]["properties"]["segments"][0]["steps"]
     readableInstructions = getReadableInstructions(steps)
     rawWaypoints = jsonRes["features"][0]["geometry"]["coordinates"]
@@ -149,9 +147,22 @@ def getDirectionsJSON(urlRequest, start_lat, start_lon, end_lat, end_lon):
         st.write(instruction)
     print('-------------------------')
 
+    #print(coordinatesInRoute)
+
+    return coordinatesInRoute
+
+    
+
 
 startingLocation = st.text_input('Starting Location', '')
 endLocation = st.text_input('Destination', '')
+
+mapView = folium.Map(location=[40.7831, -73.9712],
+                         zoom_start=12.6, tiles='cartodbpositron')
+polygons = getAreasToAvoid()
+for polygon in polygons:
+    folium.GeoJson(polygon).add_to(mapView)
+folium.LatLngPopup().add_to(mapView)
 
 if st.button('Calculate Route'):
 
@@ -167,14 +178,9 @@ if st.button('Calculate Route'):
 
     direction_request_url = ''.join(["https://api.openrouteservice.org/v2/directions/driving-car?api_key=",
                                     openRouteServiceAPIKey, "&start=", start_lon, ",", start_lat, "&end=", end_lon, ",", end_lat])
-    getDirectionsJSON(direction_request_url, start_lat,
+    coordinatesInRoute = getDirectionsJSON(direction_request_url, start_lat,
                       start_lon, end_lat, end_lon)
 
-
-mapView = folium.Map(location=[40.7831, -73.9712],
-                     zoom_start=12.6, tiles='cartodbpositron')
-polygons = getAreasToAvoid()
-for polygon in polygons:
-    folium.GeoJson(polygon).add_to(mapView)
-folium.LatLngPopup().add_to(mapView)
-st_data = st_folium(mapView, width=725)
+    folium.PolyLine(coordinatesInRoute, color='lightgreen',weight=8,opacity=0.8).add_to(mapView)
+    
+    st_data = folium_static(mapView, width=725)
