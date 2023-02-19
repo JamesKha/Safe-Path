@@ -26,7 +26,10 @@ lon_lat_list_19 = [[-73.8318673291579, 40.69969620102948],[-73.83166698990858, 4
 lon_lat_list_20 = [[ -73.92506935201055, 40.8101503323559],[-73.92521069079741,40.80992924742742],[-73.92300580572098, 40.80904490034672],[-73.92287388951995,40.80924459265299]]
 
 lon_lat_list_21 = [[ -73.92506935201055,40.8101503323559],[-73.92521069079741,40.80992924742742],[-73.92300580572098,40.80904490034672],[-73.92287388951995,40.80924459265299]]
-        
+lon_lat_list_22 =[[-73.92506935201055,40.8101503323559],[-73.92521069079741,40.80992924742742],[-73.92300580572098,40.80904490034672],[-73.92287388951995, 40.80924459265299]] 
+lon_lat_list_23 =[[-73.93667640487321,40.69078696193088],[-73.93654718633638,40.69010536847719],[-73.9364179677988,40.69011388843845],[-73.9365022407581,40.690804001678]]
+lon_lat_list_24 = [[-73.93981654777014,40.6496345844032],[-73.93978877431394,40.6493606488379],[-73.93791406599463,40.649413328841774],[-73.93798349963636,40.64976101582292]]       
+
 polygon_geom1 = Polygon(lon_lat_list_1)
 polygon1 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom1])
 
@@ -90,6 +93,15 @@ polygon10 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom1
 
 # polygon_geom21 = Polygon(lon_lat_list_21)
 # polygon21 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom21])
+
+# polygon_geom22 = Polygon(lon_lat_list_22)
+# polygon22 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom22])
+
+# polygon_geom23 = Polygon(lon_lat_list_23)
+# polygon23 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom23])
+
+# polygon_geom24 = Polygon(lon_lat_list_24)
+# polygon24 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom24])
 
 
 mutipoly = [polygon_geom1, polygon_geom2, polygon_geom3, polygon_geom4, polygon_geom5, polygon_geom6, polygon_geom7, polygon_geom8, polygon_geom9, polygon_geom10]
