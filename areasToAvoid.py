@@ -66,60 +66,62 @@ polygon_geom10 = Polygon(lon_lat_list_10)
 polygon10 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom10])
 
 
-# polygon_geom11 = Polygon(lon_lat_list_11)
-# polygon11 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom11])
+polygon_geom11 = Polygon(lon_lat_list_11)
+polygon11 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom11])
 
-# polygon_geom12 = Polygon(lon_lat_list_12)
-# polygon12 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom12])
+polygon_geom12 = Polygon(lon_lat_list_12)
+polygon12 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom12])
 
-# polygon_geom13 = Polygon(lon_lat_list_13)
-# polygon13 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom13])
+polygon_geom13 = Polygon(lon_lat_list_13)
+polygon13 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom13])
 
-# polygon_geom14 = Polygon(lon_lat_list_14)
-# polygon14 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom14])
+polygon_geom14 = Polygon(lon_lat_list_14)
+polygon14 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom14])
 
-# polygon_geom15 = Polygon(lon_lat_list_15)
-# polygon15 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom15])
+polygon_geom15 = Polygon(lon_lat_list_15)
+polygon15 = gpd.GeoDataFrame(index=[0], crs='epsg:3785', geometry=[polygon_geom15])
 
-# polygon_geom16 = Polygon(lon_lat_list_16)
-# polygon16 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom16])
+polygon_geom16 = Polygon(lon_lat_list_16)
+polygon16 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom16])
 
-# polygon_geom17 = Polygon(lon_lat_list_17)
-# polygon17 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom17])
+polygon_geom17 = Polygon(lon_lat_list_17)
+polygon17 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom17])
 
-# polygon_geom18 = Polygon(lon_lat_list_18)
-# polygon18 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom18])
+polygon_geom18 = Polygon(lon_lat_list_18)
+polygon18 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom18])
 
-# polygon_geom19 = Polygon(lon_lat_list_19)
-# polygon19 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom19])
+polygon_geom19 = Polygon(lon_lat_list_19)
+polygon19 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom19])
 
-# polygon_geom20 = Polygon(lon_lat_list_20)
-# polygon20 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom20])
+polygon_geom20 = Polygon(lon_lat_list_20)
+polygon20 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom20])
 
-# polygon_geom21 = Polygon(lon_lat_list_21)
-# polygon21 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom21])
+polygon_geom21 = Polygon(lon_lat_list_21)
+polygon21 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom21])
 
-# polygon_geom22 = Polygon(lon_lat_list_22)
-# polygon22 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom22])
+polygon_geom22 = Polygon(lon_lat_list_22)
+polygon22 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom22])
 
-# polygon_geom23 = Polygon(lon_lat_list_23)
-# polygon23 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom23])
+polygon_geom23 = Polygon(lon_lat_list_23)
+polygon23 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom23])
 
-# polygon_geom24 = Polygon(lon_lat_list_24)
-# polygon24 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom24])
+polygon_geom24 = Polygon(lon_lat_list_24)
+polygon24 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom24])
 
-# polygon_geom25 = Polygon(lon_lat_list_25)
-# polygon25 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom25])
+polygon_geom25 = Polygon(lon_lat_list_25)
+polygon25 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom25])
 
-# polygon_geom26 = Polygon(lon_lat_list_26)
-# polygon26 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom26])
+polygon_geom26 = Polygon(lon_lat_list_26)
+polygon26 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom26])
 
-# polygon_geom27 = Polygon(lon_lat_list_27)
-# polygon27 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom27])
+polygon_geom27 = Polygon(lon_lat_list_27)
+polygon27 = gpd.GeoDataFrame(index=[0], crs='epsg:4326', geometry=[polygon_geom27])
 
 
 
-mutipoly = [polygon_geom1, polygon_geom2, polygon_geom3, polygon_geom4, polygon_geom5, polygon_geom6, polygon_geom7, polygon_geom8, polygon_geom9, polygon_geom10]
+mutipoly = [polygon_geom1, polygon_geom2, polygon_geom3, polygon_geom4, polygon_geom5, polygon_geom6, polygon_geom7, polygon_geom8, polygon_geom9, polygon_geom10, 
+polygon_geom11, polygon_geom12, polygon_geom13, polygon_geom14, polygon_geom15, polygon_geom16, polygon_geom17, polygon_geom18, polygon_geom19, polygon_geom20, polygon_geom21,
+polygon_geom22, polygon_geom23, polygon_geom24, polygon_geom25, polygon_geom26, polygon_geom27]
 
 
 def getAreasToAvoid():
