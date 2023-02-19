@@ -8,6 +8,8 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 from areasToAvoid import getAreasToAvoid
 
+from twilio.rest import Client
+
 
 class coordinate:
     def __init__(self, lat, lon):
@@ -29,6 +31,7 @@ class coordinate:
 openRouteServiceAPIKey = "5b3ce3597851110001cf6248a39d88d90cfd44289c2256b4181024f1"
 openStreetMapAPIURL = "https://api.openstreetmap.org/"
 nominatimAPIURL = "https://nominatim.openstreetmap.org/search?q="
+directionsToSend = ""
 
 
 def getAddressJSON(address):
@@ -141,21 +144,40 @@ def getDirectionsJSON(urlRequest, start_lat, start_lon, end_lat, end_lon):
     rawWaypoints = jsonRes["features"][0]["geometry"]["coordinates"]
     coordinatesInRoute = parseWaypointsInRoute(rawWaypoints)
 
-    print('-------------------------')
+    global directionsToSend
+   # print('-------------------------')
     for instruction in readableInstructions:
-        print(instruction)
+        #print(instruction)
         st.write(instruction)
-    print('-------------------------')
+        directionsToSend += "\n" + instruction
+    #print('-------------------------')
 
     #print(coordinatesInRoute)
 
     return coordinatesInRoute
 
-    
+def sendDirectionsToPhone(phoneNumber):
+    global directionsToSend
+    if len(phoneNumber) == 0:
+        return
+    account_sid = 'ACf12b46da35756504ab75c7b8fd33aa5c'
+    auth_token = '95d6b5f182ea5bb20b6798b540b61fff'
+    client = Client(account_sid, auth_token)
+    to_number = phoneNumber
+    from_number = '+14326920233'
+    to_number = phoneNumber
 
+    message_body = directionsToSend
+
+    message = client.messages.create(
+        to=to_number, 
+        from_=from_number, 
+        body=message_body
+    )
 
 startingLocation = st.text_input('Starting Location', '')
 endLocation = st.text_input('Destination', '')
+phoneNumberInput = st.text_input("Phone Number for Offline Directions (Optional)")
 
 mapView = folium.Map(location=[40.7831, -73.9712],
                          zoom_start=12.6, tiles='cartodbpositron')
@@ -184,3 +206,7 @@ if st.button('Calculate Route'):
     folium.PolyLine(coordinatesInRoute, color='lightgreen',weight=8,opacity=0.8).add_to(mapView)
     
     st_data = folium_static(mapView, width=725)
+
+    sendDirectionsToPhone(phoneNumberInput)
+
+
